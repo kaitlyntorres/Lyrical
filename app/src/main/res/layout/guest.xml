@@ -18,7 +18,7 @@
         android:layout_marginTop="5dp"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="Guest Page"
+        android:text="Lyrical"
         android:textColor="@android:color/background_dark"
         android:textSize="30sp" />
 </RelativeLayout>
