@@ -6,7 +6,7 @@
         <entry key="app/src/main/res/layout/guest.xml" value="0.25416666666666665" />
         <entry key="app/src/main/res/layout/loginpage.xml" value="0.25416666666666665" />
         <entry key="app/src/main/res/layout/main.xml" value="0.610719322990127" />
-        <entry key="app/src/main/res/layout/register.xml" value="0.25416666666666665" />
+        <entry key="app/src/main/res/layout/register.xml" value="0.25" />
       </map>
     </option>
   </component>

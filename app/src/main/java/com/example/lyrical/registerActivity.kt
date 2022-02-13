@@ -5,10 +5,15 @@ import android.os.Bundle
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+//import com.google.android.material.snackbar.Snackbar
 import android.widget.Toast
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.content.Intent
+
+
+
 
 //A toast is a view containing a quick little message for the user
 
@@ -38,30 +43,62 @@ class registerActivity: AppCompatActivity() {
 
     }
 
-    private fun registerUser() {
+    private fun registerUser(){
         // converts user input to string
-        val email = email.text.toString()
+        val e = email.text.toString()
         val password = passwd.text.toString()
         val confirmpassword = confirmpasswd.text.toString()
+        // must have at least 1 uppercase, lowercase, number, special char , and be at least 8 char long
+        val pattern ="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%?&])[A-Za-z0-9@$!%?&]{8,}$".toRegex()
 
-        if (email.isBlank()) {
-            Toast.makeText(this, "Email is blank. Try again", Toast.LENGTH_SHORT).show()
+
+
+        if (e.isEmpty()) {
+            email.setError("Email can't be empty")
             return
-        } else if (password.isBlank() || confirmpassword.isBlank()) {
-            Toast.makeText(this, "Password is  blank. Try again", Toast.LENGTH_SHORT).show()
+
+            //Toast.makeText(this, "Email is blank. Try again", Toast.LENGTH_SHORT).show()
+
+        } else if (password.isEmpty()) {
+            passwd.setError("Password can't be blank")
+            return
+
+
+            //var builder= AlertDialog.Builder(activity)
+           //Toast.makeText(this, "Password is  blank. Try again", Toast.LENGTH_SHORT).show()
+
+        }
+        else if (confirmpassword.isEmpty()) {
+            confirmpasswd.setError("Must confirm a password")
+            return
+
+
+            //var builder= AlertDialog.Builder(activity)
+            //Toast.makeText(this, "Password is  blank. Try again", Toast.LENGTH_SHORT).show()
+
+        }
+
+
+        if(!pattern.containsMatchIn(password))
+        {
+            passwd.setError("invalid password ")
             return
         }
+
         if (password != confirmpassword) {
-            Toast.makeText(this, "Passwords don't match", Toast.LENGTH_SHORT).show()
+            passwd.setError("passwords don't match!")
+            confirmpasswd.setError("passwords don't match!")
             return
+
         }
 
 
-            auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this) {
+            auth.createUserWithEmailAndPassword(e, password).addOnCompleteListener(this) {
                 if (it.isSuccessful) {
                     Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT).show()
                     // main menu
-                    finish()
+                    val i = Intent(this, guestActivity::class.java)
+                    startActivity(i)
                 } else {
                     Toast.makeText(this, "Registration Failed", Toast.LENGTH_SHORT).show()
 

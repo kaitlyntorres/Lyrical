@@ -10,8 +10,10 @@
     import android.widget.Button
     import android.widget.EditText
     import android.widget.TextView
+    import java.security.AccessController.getContext
 
-//A toast is a view containing a quick little message for the user
+
+    //A toast is a view containing a quick little message for the user
 
 
 
@@ -38,25 +40,37 @@
 
 
         private fun login() {
+
+
+           // var sampleContext=loginActivity.getContext()
             // converts user input to string
-            val email = email.text.toString()
+            val e = email.text.toString()
             val password = passwd.text.toString()
-            if (email.isBlank()) {
-                Toast.makeText(this, "Email is blank. Try again", Toast.LENGTH_SHORT).show()
+
+            if (e.isEmpty()) {
+                email.setError("Email can't be empty")
                 return
+
+
             } else if (password.isBlank()) {
-                Toast.makeText(this, "Password is  blank. Try again", Toast.LENGTH_SHORT).show()
+                passwd.setError("Password can't be empty")
                 return
             }
 
-            auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this) {
+            auth.signInWithEmailAndPassword(e, password).addOnCompleteListener(this) {
                 if (it.isSuccessful) {
-                    Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext, "Login Successful", Toast.LENGTH_SHORT).show()
                     // if login is successful, continues on to app
                     val i = Intent(this, guestActivity::class.java)
                     startActivity(i)
                 } else {
-                    Toast.makeText(this, "Login Failed", Toast.LENGTH_SHORT).show()
+
+                    email.setError("Email or Password incorrect")
+                    passwd.setError("Email or Password incorrect")
+
+
+
+
 
 
                 }
