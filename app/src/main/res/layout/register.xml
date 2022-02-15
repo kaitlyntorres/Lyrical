@@ -5,8 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.lyrical.registerActivity">
-
-
     <TextView
         android:id="@+id/title_text"
         android:layout_width="214dp"
@@ -27,7 +25,9 @@
         android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginStart="6dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="60dp"
         android:layout_marginRight="20dp"
@@ -43,7 +43,7 @@
         android:layout_below="@+id/email"
         android:layout_alignParentStart="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="9dp"
+        android:layout_marginStart="5dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="35dp"
         android:layout_marginRight="20dp"
@@ -52,34 +52,121 @@
         android:inputType="textPassword"
         android:paddingBottom="20dp" />
 
-    <TextView
-        android:id="@+id/list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/password"
+    <ImageView
+        android:id="@+id/lowercase_checkmark"
+        android:layout_width="184dp"
+        android:layout_height="19dp"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginRight="20dp"
-        android:drawablePadding="10dp"
-        android:paddingBottom="20dp"
-        android:text="Password must contain: \n \n          8-20 char in length \n          at least 1 uppercase \n          at least 1 lowercase \n          at least 1 digit \n          at least 1 special char(@$!%?)"
-        android:textColor="@android:color/background_dark" />
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="-17dp"
+        android:layout_marginTop="221dp"
+        app:tint="@color/darkGray"
+        app:srcCompat="@drawable/cm" />
+
+    <TextView
+        android:id="@+id/lowercaseText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="97dp"
+        android:layout_marginTop="222dp"
+        android:text="Lowercase Letters"
+        android:tint="@color/darkGray"
+
+        />
+
+
+    <ImageView
+        android:id="@+id/uppercase_checkmark"
+        android:layout_width="184dp"
+        android:layout_height="19dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="-17dp"
+        android:layout_marginTop="249dp"
+        app:tint="@color/darkGray"
+
+        app:srcCompat="@drawable/cm" />
+
+    <TextView
+        android:id="@+id/uppercaseText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="94dp"
+        android:layout_marginTop="248dp"
+        android:text="Uppercase Letters"
+        android:tint="@color/darkGray"
+
+        />
+
+    <ImageView
+        android:id="@+id/digit_checkmark"
+        android:layout_width="184dp"
+        android:layout_height="19dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="-17dp"
+        android:layout_marginTop="279dp"
+
+        app:tint="@color/darkGray"
+        app:srcCompat="@drawable/cm" />
+
+    <TextView
+        android:id="@+id/digitText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="94dp"
+        android:layout_marginTop="277dp"
+        android:text="Digits"
+        android:tint="@color/darkGray"
+
+        />
+
+
+    <ImageView
+        android:id="@+id/sc_checkmark"
+        android:layout_width="184dp"
+        android:layout_height="19dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="-16dp"
+        android:layout_marginTop="309dp"
+        app:tint="@color/darkGray"
+        app:srcCompat="@drawable/cm" />
+
+
+    <TextView
+        android:id="@+id/scText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="94dp"
+        android:layout_marginTop="308dp"
+        android:text="Special Char (@$!%?)"
+        android:tint="@color/darkGray" />
 
     <EditText
         android:id="@+id/confirmpassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/list"
+        android:layout_below="@+id/scText"
         android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="6dp"
+        android:layout_marginStart="7dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="51dp"
+        android:layout_marginEnd="-1dp"
         android:layout_marginRight="20dp"
         android:drawablePadding="10dp"
         android:hint="Enter Password Again:"
@@ -94,9 +181,9 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
-        android:layout_marginStart="-7dp"
-        android:layout_marginTop="531dp"
-        android:layout_marginEnd="5dp"
+        android:layout_marginStart="-8dp"
+        android:layout_marginTop="504dp"
+        android:layout_marginEnd="6dp"
         android:text="Register" />
 
 
