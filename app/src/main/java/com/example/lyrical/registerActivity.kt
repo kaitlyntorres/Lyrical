@@ -104,6 +104,7 @@ class registerActivity: AppCompatActivity() {
     private fun tester(num: Int, num2: Int, num3: Int, num4: Int) {
 
 
+
         btnRegister.isEnabled = num == 1 && num2 == 1 && num3 == 1 && num4 == 1
 
 
@@ -168,8 +169,8 @@ class registerActivity: AppCompatActivity() {
 
         }
 
-        else if(password.length<5){
-            passwd.setError("password too small in length")
+        else if(password.length<8 || password.length>20){
+            passwd.setError("password not in range")
         }
 
         auth.createUserWithEmailAndPassword(e, password).addOnCompleteListener(this) {

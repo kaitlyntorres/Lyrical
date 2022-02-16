@@ -21,4 +21,35 @@
         android:text="Lyrical"
         android:textColor="@android:color/background_dark"
         android:textSize="30sp" />
+
+
+    <EditText
+        android:id="@+id/textBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_text"
+        android:layout_alignParentStart="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginRight="20dp"
+        android:drawablePadding="10dp"
+        android:hint="Enter lyrics: "
+        android:inputType="textPassword"
+        android:paddingBottom="20dp" />
+
+    <ImageButton
+        android:id="@+id/voice"
+        android:layout_width="121dp"
+        android:layout_height="104dp"
+        android:layout_below="@+id/textBox"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="#80FFFFFF"
+        android:layout_centerInParent="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/mic" />
+
+
 </RelativeLayout>
