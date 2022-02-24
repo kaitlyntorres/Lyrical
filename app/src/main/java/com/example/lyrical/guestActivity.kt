@@ -1,6 +1,7 @@
 package com.example.lyrical
 
 import android.app.Activity
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,11 +11,14 @@ import android.widget.ImageButton
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.result.ActivityResultLauncher
+import androidx.appcompat.app.AlertDialog
 
 class guestActivity: AppCompatActivity()  {
 
     private lateinit var voice: ImageButton
     private lateinit var textv: TextView
+    private lateinit var logout: Button
+
     private val speechCode = 100
 
 
@@ -22,9 +26,13 @@ class guestActivity: AppCompatActivity()  {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.guest)
          textv = findViewById<TextView>(R.id.textBox)
+        logout = findViewById<Button>(R.id.logout)
         voice = findViewById<ImageButton>(R.id.voice)
         voice.setOnClickListener {
             voiceToText()
+        }
+        logout.setOnClickListener {
+            logout()
         }
     }
    private fun voiceToText(){
@@ -51,6 +59,24 @@ class guestActivity: AppCompatActivity()  {
         }
 
         super.onActivityResult(requestCode, resultCode, data)
+    }
+    private fun logout()
+    {
+        val dialog = AlertDialog.Builder(this)
+        dialog.setMessage("Are you sure you would like to logout?")
+            .setCancelable(false)
+            .setPositiveButton("Yes", DialogInterface.OnClickListener {
+                dialog, id -> finish()
+        })
+            // negative button text and action
+            .setNegativeButton("No", DialogInterface.OnClickListener {
+                    dialog, id -> dialog.cancel()
+            })
+        val alertdialog = dialog.create()
+        // set title for alert dialog box
+        alertdialog.setTitle("Logout")
+        // show alert dialog
+        alertdialog.show()
     }
 
 }

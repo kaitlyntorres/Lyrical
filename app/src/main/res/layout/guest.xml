@@ -14,14 +14,13 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="102dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginStart="91dp"
+        android:layout_marginTop="10dp"
         android:layout_weight="1"
         android:gravity="center"
         android:text="Lyrical"
         android:textColor="@android:color/background_dark"
         android:textSize="30sp" />
-
 
     <TextView
         android:id="@+id/textBox"
@@ -50,6 +49,19 @@
         android:layout_centerInParent="true"
         android:scaleType="fitXY"
         android:src="@drawable/mic" />
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="107dp"
+        android:layout_height="48dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="295dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="9dp"
+        android:text="Logout" />
 
 
 </RelativeLayout>

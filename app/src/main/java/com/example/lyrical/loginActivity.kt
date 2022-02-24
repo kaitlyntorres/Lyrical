@@ -1,5 +1,6 @@
     package com.example.lyrical
 
+    import android.content.DialogInterface
     import android.content.Intent
     import androidx.appcompat.app.AppCompatActivity
     import android.os.Bundle
@@ -10,6 +11,7 @@
     import android.widget.Button
     import android.widget.EditText
     import android.widget.TextView
+    import androidx.appcompat.app.AlertDialog
     import java.security.AccessController.getContext
 
 
@@ -20,6 +22,8 @@
     lateinit var email: EditText
     lateinit var passwd: EditText
     private lateinit var loginbutton: Button
+    private lateinit var forgot: Button
+
 
     lateinit var auth: FirebaseAuth
     class loginActivity: AppCompatActivity() {
@@ -29,6 +33,7 @@
             // reads in data from login xml by its id
             email = findViewById(R.id.email)
             passwd = findViewById(R.id.password)
+            forgot = findViewById(R.id.forgot)
             loginbutton = findViewById(R.id.submitbutton)
             // connection to firebase
             auth = Firebase.auth
@@ -36,13 +41,18 @@
             loginbutton.setOnClickListener {
                 login()
             }
+            forgot.setOnClickListener {
+                val i = Intent(this, forgotActivity::class.java)
+                startActivity(i)
+            }
+
         }
 
 
         private fun login() {
 
 
-           // var sampleContext=loginActivity.getContext()
+            // var sampleContext=loginActivity.getContext()
             // converts user input to string
             val e = email.text.toString()
             val password = passwd.text.toString()
@@ -59,7 +69,8 @@
 
             auth.signInWithEmailAndPassword(e, password).addOnCompleteListener(this) {
                 if (it.isSuccessful) {
-                    Toast.makeText(applicationContext, "Login Successful", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext, "Login Successful", Toast.LENGTH_SHORT)
+                        .show()
                     // if login is successful, continues on to app
                     val i = Intent(this, guestActivity::class.java)
                     startActivity(i)
@@ -67,15 +78,14 @@
 
                     email.setError("Email or Password incorrect")
                     passwd.setError("Email or Password incorrect")
-
-
-
-
-
-
                 }
-
             }
-
         }
     }
+
+
+
+
+
+
+
