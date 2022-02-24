@@ -66,7 +66,8 @@ class guestActivity: AppCompatActivity()  {
         dialog.setMessage("Are you sure you would like to logout?")
             .setCancelable(false)
             .setPositiveButton("Yes", DialogInterface.OnClickListener {
-                dialog, id -> finish()
+                dialog, id -> val i = Intent(this, MainActivity::class.java)
+                startActivity(i)
         })
             // negative button text and action
             .setNegativeButton("No", DialogInterface.OnClickListener {
