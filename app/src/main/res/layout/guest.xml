@@ -22,7 +22,7 @@
         android:textColor="@android:color/background_dark"
         android:textSize="30sp" />
 
-    <TextView
+    <EditText
         android:id="@+id/textBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

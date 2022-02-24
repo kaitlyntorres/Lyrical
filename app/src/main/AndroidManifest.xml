@@ -21,8 +21,13 @@
             </intent-filter>
         </activity>
         <activity android:name="com.example.lyrical.loginActivity"></activity>
+        <activity android:name="com.example.lyrical.forgotActivity"></activity>
         <activity android:name="com.example.lyrical.registerActivity"></activity>
         <activity android:name="com.example.lyrical.guestActivity"></activity>
+
+
+
+
     </application>
 
 </manifest>

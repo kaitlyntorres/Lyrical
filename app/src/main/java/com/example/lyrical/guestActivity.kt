@@ -9,14 +9,14 @@ import android.speech.RecognizerIntent
 import android.view.View
 import android.widget.ImageButton
 import android.widget.Button
-import android.widget.TextView
+import android.widget.EditText
 import androidx.activity.result.ActivityResultLauncher
 import androidx.appcompat.app.AlertDialog
 
 class guestActivity: AppCompatActivity()  {
 
     private lateinit var voice: ImageButton
-    private lateinit var textv: TextView
+    private lateinit var textv: EditText
     private lateinit var logout: Button
 
     private val speechCode = 100
@@ -25,7 +25,7 @@ class guestActivity: AppCompatActivity()  {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.guest)
-         textv = findViewById<TextView>(R.id.textBox)
+         textv = findViewById<EditText>(R.id.textBox)
         logout = findViewById<Button>(R.id.logout)
         voice = findViewById<ImageButton>(R.id.voice)
         voice.setOnClickListener {
