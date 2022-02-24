@@ -75,6 +75,7 @@
         app:srcCompat="@drawable/cm"
         app:tint="@color/darkGray" />
 
+
     <TextView
         android:id="@+id/lowercaseText"
         android:layout_width="wrap_content"
@@ -82,12 +83,11 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="98dp"
-        android:layout_marginTop="280dp"
+        android:layout_marginTop="248dp"
         android:text="Lowercase Letters"
         android:tint="@color/darkGray"
 
         />
-
 
     <ImageView
         android:id="@+id/uppercase_checkmark"
@@ -110,7 +110,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="98dp"
-        android:layout_marginTop="249dp"
+        android:layout_marginTop="278dp"
         android:text="Uppercase Letters"
         android:tint="@color/darkGray"
 
@@ -197,12 +197,6 @@
         android:layout_marginTop="504dp"
         android:layout_marginEnd="6dp"
         android:text="Register" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="tent&quot;" />
 
 
 </RelativeLayout>

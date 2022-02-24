@@ -1,10 +1,9 @@
     package com.example.lyrical
 
-    import android.content.DialogInterface
     import android.content.Intent
     import androidx.appcompat.app.AppCompatActivity
     import android.os.Bundle
-    import com.google.firebase.auth.FirebaseAuth;
+    import com.google.firebase.auth.FirebaseAuth
     import com.google.firebase.auth.ktx.auth
     import com.google.firebase.ktx.Firebase
     import android.widget.Toast
@@ -21,8 +20,8 @@
 
     lateinit var email: EditText
     lateinit var passwd: EditText
+    private lateinit var forgotb: Button
     private lateinit var loginbutton: Button
-    private lateinit var forgot: Button
 
 
     lateinit var auth: FirebaseAuth
@@ -33,18 +32,23 @@
             // reads in data from login xml by its id
             email = findViewById(R.id.email)
             passwd = findViewById(R.id.password)
-            forgot = findViewById(R.id.forgot)
-            loginbutton = findViewById(R.id.submitbutton)
             // connection to firebase
             auth = Firebase.auth
-            // on click goes to login function
-            loginbutton.setOnClickListener {
-                login()
-            }
-            forgot.setOnClickListener {
+
+
+            forgotb = findViewById(R.id.forgotp)
+            forgotb.setOnClickListener {
                 val i = Intent(this, forgotActivity::class.java)
                 startActivity(i)
             }
+
+            // on click goes to login function
+            loginbutton = findViewById(R.id.submitbutton)
+            loginbutton.setOnClickListener {
+                login()
+            }
+
+
 
         }
 
