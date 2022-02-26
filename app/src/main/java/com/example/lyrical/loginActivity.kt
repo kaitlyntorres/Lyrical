@@ -38,7 +38,7 @@
 
             forgotb = findViewById(R.id.forgotp)
             forgotb.setOnClickListener {
-                val i = Intent(this, forgotActivity::class.java)
+                val i = Intent(this, reset::class.java)
                 startActivity(i)
             }
 

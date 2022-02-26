@@ -12,6 +12,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.activity.result.ActivityResultLauncher
 import androidx.appcompat.app.AlertDialog
+import java.util.*
 
 class guestActivity: AppCompatActivity()  {
 
@@ -42,6 +43,7 @@ class guestActivity: AppCompatActivity()  {
                    RecognizerIntent.EXTRA_LANGUAGE_MODEL,
                    RecognizerIntent.LANGUAGE_MODEL_FREE_FORM
                )
+               intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault())
                intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Speak here: ")
            }
        startActivityForResult(intent,speechCode)
@@ -53,12 +55,13 @@ class guestActivity: AppCompatActivity()  {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == speechCode && resultCode == Activity.RESULT_OK) {
             val result=data?.getStringArrayExtra(RecognizerIntent.EXTRA_RESULTS)
-            textv.text=result?.get(0).toString()
+            textv.setText(result?.get(0))
         }
 
-        super.onActivityResult(requestCode, resultCode, data)
+
     }
     private fun logout()
     {
