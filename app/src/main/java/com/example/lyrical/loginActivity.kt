@@ -77,6 +77,7 @@
                         .show()
                     // if login is successful, continues on to app
                     val i = Intent(this, guestActivity::class.java)
+                    i.putExtra("Email",e)
                     startActivity(i)
                 } else {
 

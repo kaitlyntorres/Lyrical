@@ -7,18 +7,18 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.speech.RecognizerIntent
 import android.view.View
-import android.widget.ImageButton
-import android.widget.Button
-import android.widget.EditText
+import android.widget.*
 import androidx.activity.result.ActivityResultLauncher
 import androidx.appcompat.app.AlertDialog
 import java.util.*
 
 class guestActivity: AppCompatActivity()  {
 
+
     private lateinit var voice: ImageButton
     private lateinit var textv: EditText
     private lateinit var logout: Button
+    private lateinit var wemail: TextView
 
     private val speechCode = 100
 
@@ -26,9 +26,17 @@ class guestActivity: AppCompatActivity()  {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.guest)
+        wemail=findViewById<TextView>(R.id.welcome)
          textv = findViewById<EditText>(R.id.textBox)
         logout = findViewById<Button>(R.id.logout)
         voice = findViewById<ImageButton>(R.id.voice)
+        val email_name=intent.getStringExtra("Email")
+        if(email_name.isNullOrEmpty()) {
+            wemail.setText("Welcome Guest")
+        }
+        else{
+        wemail.setText("Welcome "+ email_name)}
+
         voice.setOnClickListener {
             voiceToText()
         }

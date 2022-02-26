@@ -8,14 +8,28 @@
 
 
     <TextView
+        android:id="@+id/welcome"
+        android:layout_width="405dp"
+        android:layout_height="41dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textColor="@android:color/background_dark"
+        android:textSize="15sp" />
+
+    <TextView
         android:id="@+id/title_text"
         android:layout_width="214dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="91dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="95dp"
+        android:layout_marginTop="121dp"
         android:layout_weight="1"
         android:gravity="center"
         android:text="Lyrical"
@@ -58,9 +72,9 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
-        android:layout_marginStart="295dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="9dp"
+        android:layout_marginStart="290dp"
+        android:layout_marginTop="596dp"
+        android:layout_marginEnd="14dp"
         android:text="Logout" />
 
 

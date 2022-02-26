@@ -178,8 +178,10 @@ class registerActivity: AppCompatActivity() {
             if (it.isSuccessful) {
                 Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT).show()
                 // main menu
-                val i = Intent(this, guestActivity::class.java)
-                startActivity(i)
+
+                val intent = Intent(this, guestActivity::class.java)
+                intent.putExtra("Email",e)
+                startActivity(intent)
 
             }
             else{
