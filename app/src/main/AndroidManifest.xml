@@ -15,7 +15,7 @@
         <activity android:name=".loginActivity"></activity>
         <activity android:name=".registerActivity"></activity>
         <activity android:name=".guestActivity"></activity>
-        <activity android:name=".reset"></activity>
+        <activity android:name=".reset" android:parentActivityName=".loginActivity"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">
