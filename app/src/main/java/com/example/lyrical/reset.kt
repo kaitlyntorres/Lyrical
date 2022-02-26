@@ -40,11 +40,11 @@ class reset: AppCompatActivity() {
                         catch (invalidEmail: FirebaseAuthInvalidUserException) {
                             Log.d(TAG, "onComplete: invalid_email")
 
-                            // TODO: take your actions!
                         }
 
                     } else {
                         Log.d(TAG, "Email sent")
+                        finish()
 
 
                     }
