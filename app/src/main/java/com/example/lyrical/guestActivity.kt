@@ -62,12 +62,19 @@ class guestActivity: AppCompatActivity()  {
 
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) 
+    {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == speechCode && resultCode == Activity.RESULT_OK) {
-            val result=data?.getStringArrayExtra(RecognizerIntent.EXTRA_RESULTS)
-            textv.setText(result?.get(0))
-        }
+            //val result=data?.getStringArrayExtra(RecognizerIntent.EXTRA_RESULTS)
+            //textv.setText(result?.get(0))
+            val spokenText: String? =
+                data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS).let { results ->
+                    results?.get(0) }
+            textv.setText(spokenText)
+            // Do something with spokenText.
+
+     }
 
 
     }
