@@ -11,22 +11,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Lyrical">
-
-        <activity android:name=".loginActivity"></activity>
-        <activity android:name=".registerActivity"></activity>
-        <activity android:name=".guestActivity"></activity>
-        <activity android:name=".reset" android:parentActivityName=".loginActivity"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity android:name="com.example.lyrical.loginActivity"></activity>
+        <activity android:name="com.example.lyrical.forgotActivity"></activity>
+        <activity android:name="com.example.lyrical.ApiActivity"></activity>
+        <activity android:name="com.example.lyrical.registerActivity"></activity>
+        <activity android:name="com.example.lyrical.guestActivity"></activity>
 
 
 

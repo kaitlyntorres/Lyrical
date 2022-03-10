@@ -3,9 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/forgot.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/guest.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/loginpage.xml" value="0.1" />
+        <entry key="..\:/Users/charl/Documents/School/Adelphi/Spring2022/CSC482/Capstone/lyrical/app/src/main/res/layout/activity_api.xml" value="0.32472826086956524" />
+        <entry key="..\:/Users/charl/Documents/School/Adelphi/Spring2022/CSC482/Capstone/lyrical/app/src/main/res/layout/guest.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/charl/Documents/School/Adelphi/Spring2022/CSC482/Capstone/lyrical/app/src/main/res/layout/list_row.xml" value="0.32472826086956524" />
+        <entry key="..\:/Users/charl/Documents/School/Adelphi/Spring2022/CSC482/Capstone/lyrical/app/src/main/res/layout/loginpage.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/charl/Documents/School/Adelphi/Spring2022/CSC482/Capstone/lyrical/app/src/main/res/layout/main.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/charl/Documents/School/Adelphi/Spring2022/CSC482/Capstone/lyrical/app/src/main/res/layout/register.xml" value="0.38697916666666665" />
+        <entry key="app/src/main/res/layout/guest.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/loginpage.xml" value="0.25416666666666665" />
         <entry key="app/src/main/res/layout/main.xml" value="0.610719322990127" />
         <entry key="app/src/main/res/layout/register.xml" value="0.25" />
       </map>
