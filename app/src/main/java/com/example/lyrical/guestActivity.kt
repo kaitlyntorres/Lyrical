@@ -208,6 +208,7 @@ class guestActivity: AppCompatActivity()    {
         return l
     }
     override fun onBackPressed() {
+        println(auth.currentUser)
 
     }
 
