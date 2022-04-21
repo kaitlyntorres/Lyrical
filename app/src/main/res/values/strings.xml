@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">lyrical</string>
+    <string-array name="Languages">
+        <item><FONT COLOR="#ff8599">English</FONT></item>
+        <item><FONT COLOR="#ff8599">Spanish</FONT></item>
+        <item><FONT COLOR="#ff8599">Italian</FONT></item>
+        <item><FONT COLOR="#ff8599">French</FONT></item>
+
+
+    </string-array>
+</resources>

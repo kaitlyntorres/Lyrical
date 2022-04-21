@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.lyrical.guestActivity"
+    android:background="@color/prettyPink">
+
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/l"
+        android:layout_width="107dp"
+        android:layout_height="35dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="570dp"
+        android:layout_marginEnd="297dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="Language:"
+        android:textColor="@android:color/white"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/title_text"
+        android:layout_width="224dp"
+        android:layout_height="57dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="102dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="112dp"
+        android:layout_centerInParent="true"
+
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="Song Search"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="224dp"
+        android:layout_height="57dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="101dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="217dp"
+        android:layout_centerInParent="true"
+
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="Tap Mic to Sing:"
+
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/lyrictext"
+        android:layout_width="224dp"
+        android:layout_height="57dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="475dp"
+        android:layout_weight="1"
+
+        android:gravity="center"
+        android:text="Or Type in Lyrics:"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <Spinner
+        android:id="@+id/lang"
+        android:layout_width="148dp"
+        android:layout_height="49dp"
+        android:layout_below="@+id/title_text"
+        android:layout_alignParentStart="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="448dp"
+        android:layout_weight="1"
+        android:backgroundTint="@color/prettyPink"
+        android:drawablePadding="10dp"
+        android:hint="Languages"
+        android:minHeight="32dp"
+        android:popupBackground="@color/prettyPink"
+        android:spinnerMode="dropdown"
+        android:textColor="@color/prettyPink" />
+
+    <EditText
+        android:id="@+id/textBox"
+        android:layout_width="192dp"
+        android:layout_height="67dp"
+        android:layout_below="@+id/title_text"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="206dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="416dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginRight="20dp"
+        android:drawablePadding="10dp"
+        android:hint="Enter lyrics: "
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:paddingBottom="20dp"
+        android:textColorHint="@color/white" />
+
+    <ImageButton
+        android:id="@+id/voice"
+        android:layout_width="163dp"
+        android:layout_height="128dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="74dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="74dp"
+        android:layout_marginEnd="74dp"
+        android:layout_marginBottom="74dp"
+        android:backgroundTint="#ff8599"
+        android:scaleType="fitXY"
+        android:src="@drawable/mic" />
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="303dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/roundbutton"
+        android:text="Logout"
+        android:textColor="@color/prettyPink" />
+
+    <Button
+        android:id="@+id/history"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+
+        android:layout_marginEnd="290dp"
+        android:background="@drawable/roundbutton"
+        android:text="History"
+        android:textColor="@color/prettyPink" />
+
+
+</RelativeLayout>
