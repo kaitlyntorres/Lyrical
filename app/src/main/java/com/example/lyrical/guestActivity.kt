@@ -207,5 +207,8 @@ class guestActivity: AppCompatActivity()    {
 
         return l
     }
+    override fun onBackPressed() {
+
+    }
 
 }

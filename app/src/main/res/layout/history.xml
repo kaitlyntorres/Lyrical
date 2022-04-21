@@ -14,10 +14,34 @@
 
     <!--Recycler view for displaying
         our data from Firestore-->
+
+    <TextView
+        android:id="@+id/title_text"
+        android:layout_width="259dp"
+        android:layout_height="55dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="102dp"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:text="History"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+
+        />
+
     <ListView
         android:id="@+id/LVHistory"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+
+        android:layout_width="wrap_content"
+        android:layout_height="563dp"
+        android:layout_marginBottom="26dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
         android:dividerHeight="6dp"
         app:layout_constraintStart_toStartOf="parent" />
 

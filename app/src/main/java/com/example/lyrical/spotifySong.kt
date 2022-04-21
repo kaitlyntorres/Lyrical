@@ -65,9 +65,12 @@ class spotifySong: AppCompatActivity() {
                 yes.setOnClickListener {
 
                     println("USERRR: " + user)
-                    yes.setBackgroundColor(yes.getContext().getResources().getColor(R.color.Green))
+
+                    yes.setBackground(getResources().getDrawable(R.drawable.green))
+
                     Handler().postDelayed(
-                        Runnable { yes.setBackgroundColor(yes.getContext().getResources().getColor(R.color.prettyPink)) },
+                        Runnable { yes.setBackgroundColor(yes.getContext().getResources().getColor(R.color.white))
+                            yes.setBackground(getResources().getDrawable(R.drawable.roundbutton))},
                         500
                     )
 
@@ -112,10 +115,11 @@ class spotifySong: AppCompatActivity() {
 
 
                 no.setOnClickListener{
-                    no.setBackgroundColor(no.getContext().getResources().getColor(R.color.red))
+                    no.setBackground(getResources().getDrawable(R.drawable.red))
 
                     Handler().postDelayed(
-                        Runnable { no.setBackgroundColor(no.getContext().getResources().getColor(R.color.prettyPink))},
+                        Runnable { no.setBackgroundColor(no.getContext().getResources().getColor(R.color.white))
+                                 no.setBackground(getResources().getDrawable(R.drawable.roundbutton))},
                         500
                     )
 
@@ -192,7 +196,7 @@ private fun html(trackID:String?){
     val data = "<html>\n" +
             "    <head></head>\n" +
             "    \n" +
-            "    <body>\n" +
+            "    <body style=\"background-color:black;\">\n" +
             "    \n" +
             "      <iframe style=\"border-radius:12px\" src=\"https://open.spotify.com/embed/track/" +
             trackID +
