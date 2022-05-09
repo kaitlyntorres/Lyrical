@@ -1,8 +1,14 @@
 package com.example.lyrical
 
+/*
+* Authors: Omer Basar, Kaitlyn Torres, Charles Howard
+* File: spotifySong
+* Purpose: allows the web player for the song to be shown to the user
+*
+* */
+
 import android.content.ContentValues.TAG
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.util.Base64
@@ -22,7 +28,8 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 
-class spotifySong: AppCompatActivity() {
+class songPlayer: AppCompatActivity() {
+
     private lateinit var webView: WebView;
     private lateinit var yes: Button;
     private lateinit var no: Button;
@@ -38,7 +45,6 @@ class spotifySong: AppCompatActivity() {
         yes = findViewById(R.id.checkyes)
         no = findViewById(R.id.checkno)
 
-
         webView.webChromeClient = WebChromeClient()
         webView.webViewClient = WebViewClient()
         webView.settings.javaScriptEnabled = true
@@ -51,9 +57,7 @@ class spotifySong: AppCompatActivity() {
         var trackID:String?=""
 
 
-
         if (hashMap != null) {
-
 
                 trackID=hashMap.elementAt(k).substringAfter("TrackID: ").substringBefore(",")
                 html(trackID)
@@ -74,7 +78,6 @@ class spotifySong: AppCompatActivity() {
                         500
                     )
 
-
                     clearHTML()
 
                     var songName = hashMap.elementAt(k).substringAfter("Full Title: ").substringBefore(",")
@@ -91,8 +94,6 @@ class spotifySong: AppCompatActivity() {
                     val user = FirebaseAuth.getInstance().currentUser
 
 
-
-
                     var userEmail:String?=""
 
                     if (user != null) {
@@ -103,7 +104,7 @@ class spotifySong: AppCompatActivity() {
                     }
 
 
-                    val it = Intent(this@spotifySong, guestActivity::class.java)
+                    val it = Intent(this@songPlayer, homeActivity::class.java)
 
                     //TODO(MAKE EMAIL )
                     it.putExtra("Email",userEmail)
@@ -127,15 +128,7 @@ class spotifySong: AppCompatActivity() {
 
                 }
 
-
-
-
-
-
             }
-
-
-
         }
         //var trackID = hashMap?.first()?.substringAfter("TrackID: ")?.substringBefore(",")
 
@@ -144,10 +137,7 @@ class spotifySong: AppCompatActivity() {
 
 private fun iterate(hashMap: Array<String>?){
 
-
-
     k=k+1
-
     if (hashMap != null) {
         if(k>=hashMap.size){
 
@@ -166,7 +156,7 @@ private fun iterate(hashMap: Array<String>?){
             }
 
 
-            val it = Intent(this@spotifySong, guestActivity::class.java)
+            val it = Intent(this@songPlayer, homeActivity::class.java)
 
             //TODO(MAKE EMAIL )
             it.putExtra("Email",userEmail)
@@ -183,13 +173,7 @@ private fun iterate(hashMap: Array<String>?){
 
         }
     }
-
-
-
-
-
 }
-
 
 
 private fun html(trackID:String?){
@@ -223,18 +207,11 @@ private fun html(trackID:String?){
         webView.settings.javaScriptEnabled = true
     }
 
-
-
-
-
-
     override fun onBackPressed() {
         super.onBackPressed()
-        val it = Intent(this@spotifySong, guestActivity::class.java)
+        val it = Intent(this@songPlayer, homeActivity::class.java)
         startActivity(it)
     }
-
-
 
 }
 

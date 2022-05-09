@@ -1,6 +1,13 @@
 package com.example.lyrical
+
+/*
+* Authors: Omer Basar, Kaitlyn Torres, Charles Howard
+* File: passwordReset
+* Purpose: allows users to reset their password
+*
+* */
+
 import android.content.DialogInterface
-import android.content.Intent
 import android.os.Bundle
 import android.view.Window
 import android.view.WindowManager
@@ -14,12 +21,10 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 
-
-
 //is called if user clicks forgot password button
 
 
-class reset: AppCompatActivity() {
+class passwordReset: AppCompatActivity() {
     //initialize attributes
     private lateinit var e: EditText
     private lateinit var btnReset: Button
@@ -58,9 +63,6 @@ class reset: AppCompatActivity() {
                         } // if user enters wrong email.
                         catch (invalidEmail: FirebaseAuthInvalidUserException) {
                             e.setError("Invalid email")
-
-
-
                         }
 
                     } else {
@@ -74,15 +76,9 @@ class reset: AppCompatActivity() {
                             })
                         val alertdialog = dialog.create()
 
-
                         alertdialog.show()
-
-
                     }
                 }
-
         }
     }
-
-
 }

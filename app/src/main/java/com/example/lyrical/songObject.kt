@@ -1,5 +1,12 @@
 package com.example.lyrical
 
+/*
+* Authors: Omer Basar, Kaitlyn Torres, Charles Howard
+* File: songObject
+* Purpose: allows storage and usage of data from genius api call
+*
+* */
+
 class songObject (
     var song_title : String,
     var song_artist : String,

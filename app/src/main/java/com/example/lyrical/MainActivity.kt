@@ -1,13 +1,19 @@
 package com.example.lyrical
 
+/*
+* Authors: Omer Basar, Kaitlyn Torres, Charles Howard
+* File: MainActivity
+* Purpose: it is the welcome page
+*
+* */
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.content.Intent
-import android.graphics.Color
 import android.view.Window
 import android.view.WindowManager
-import android.widget.TextView
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,9 +28,6 @@ class MainActivity : AppCompatActivity() {
             val i = Intent(this, loginActivity::class.java)
             startActivity(i)
         }
-
-
-
 
     }
 }

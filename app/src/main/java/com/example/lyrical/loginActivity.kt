@@ -1,32 +1,44 @@
-    package com.example.lyrical
+package com.example.lyrical
 
-    import android.content.Intent
-    import androidx.appcompat.app.AppCompatActivity
-    import android.os.Bundle
-    import android.view.Window
-    import android.view.WindowManager
-    import com.google.firebase.auth.FirebaseAuth
-    import com.google.firebase.auth.ktx.auth
-    import com.google.firebase.ktx.Firebase
-    import android.widget.Toast
-    import android.widget.Button
-    import android.widget.EditText
-    import android.widget.TextView
-    import androidx.appcompat.app.AlertDialog
-    import java.security.AccessController.getContext
+/*
+* Authors: Omer Basar, Kaitlyn Torres, Charles Howard
+* File: loginActivity
+* Purpose: allows users to login
+*
+* */
+
+import android.annotation.SuppressLint
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.view.Window
+import android.view.WindowManager
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
+import android.widget.Toast
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
 
 
-    //A toast is a view containing a quick little message for the user
+//A toast is a view containing a quick little message for the user
 
 
 //LOGIN PAGE
 
 //initialize attribute
+    @SuppressLint("StaticFieldLeak")
     lateinit var email: EditText
+    @SuppressLint("StaticFieldLeak")
     lateinit var passwd: EditText
+    @SuppressLint("StaticFieldLeak")
     private lateinit var forgotb: TextView
+    @SuppressLint("StaticFieldLeak")
     private lateinit var r: TextView
+    @SuppressLint("StaticFieldLeak")
     private lateinit var loginbutton: Button
+    @SuppressLint("StaticFieldLeak")
     private lateinit var guestbutton: Button
 
 
@@ -50,7 +62,7 @@
             forgotb = findViewById(R.id.forgotp)
             //on click sends to reset kotlin activity
             forgotb.setOnClickListener {
-                val i = Intent(this, reset::class.java)
+                val i = Intent(this, passwordReset::class.java)
                 startActivity(i)
             }
 
@@ -69,7 +81,7 @@
 
             guestbutton= findViewById(R.id.guestbutton)
             guestbutton.setOnClickListener {
-                val i = Intent(this, guestActivity::class.java)
+                val i = Intent(this, homeActivity::class.java)
                 startActivity(i)
             }
 
@@ -103,7 +115,7 @@
                         .show()
 
                     // if login is successful, continues on to app
-                    val i = Intent(this, guestActivity::class.java)
+                    val i = Intent(this, homeActivity::class.java)
                     i.putExtra("Email",e)
                     startActivity(i)
 

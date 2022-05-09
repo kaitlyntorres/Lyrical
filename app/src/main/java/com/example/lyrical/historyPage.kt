@@ -1,9 +1,15 @@
 package com.example.lyrical
+
+/*
+* Authors: Omer Basar, Kaitlyn Torres, Charles Howard
+* File: historyPage
+* Purpose: allows users to see their song search history
+*
+* */
+
 import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
-import android.view.Window
-import android.view.WindowManager
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
@@ -12,7 +18,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 
-class h : AppCompatActivity() {
+class historyPage : AppCompatActivity() {
     private lateinit var hist: ListView
     // creating variables for our recycler view,
     // array list, adapter, firebase firestore
@@ -31,7 +37,6 @@ class h : AppCompatActivity() {
         if (user != null) {
             uc = user.uid
 
-
             val docRef = db.collection("users").document(uc)
             docRef.get()
                 .addOnSuccessListener { document ->
@@ -40,7 +45,7 @@ class h : AppCompatActivity() {
                         var song = document.get("Song Info")
 
                         var a=song.toString()
-                       var  aa = a.substringAfter("[" ).substringBefore("]")
+                        var  aa = a.substringAfter("[" ).substringBefore("]")
 
                         var arr = aa.split(",")
 
@@ -53,25 +58,8 @@ class h : AppCompatActivity() {
                         hist.setAdapter(adapt)
 
 
-
-
-
-
-
-
-                        //val result: StringBuffer = StringBuffer()
-                        //result.append(document.data)
-
-
-
-
-
-
-
-
-                        //Log.d(TAG, "DocumentSnapshot data: ${document.data}")
-
-                    } else {
+                    }
+                    else {
                         Log.d(TAG, "No such document")
                     }
                 }
@@ -81,15 +69,11 @@ class h : AppCompatActivity() {
 
 
 
-            // print("hi" + currentdoc)
-
-
-
-
-                }
 
         }
+
     }
+}
 
 
 

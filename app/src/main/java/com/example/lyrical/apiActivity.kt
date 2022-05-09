@@ -1,12 +1,14 @@
 package com.example.lyrical
 
-import android.animation.ObjectAnimator
+/*
+* Authors: Omer Basar, Kaitlyn Torres, Charles Howard
+* File: apiActivity
+* Purpose: handles all communication between Genius and Spotify APIS with our app
+*
+* */
+
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
-import android.view.Window
-import android.view.WindowManager
-import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
 import com.adamratzman.spotify.spotifyAppApi
 import com.google.gson.GsonBuilder
@@ -16,11 +18,7 @@ import okhttp3.*
 import ru.gildor.coroutines.okhttp.await
 import java.util.*
 
-private val handler: Handler = Handler()
-
-class ApiActivity : AppCompatActivity() {
-    lateinit var loadingBar: ProgressBar
-
+class apiActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         // Initialize all necessary stuff first
@@ -28,15 +26,6 @@ class ApiActivity : AppCompatActivity() {
 
         val search = intent.getStringExtra("keyOne")
         super.onCreate(savedInstanceState)
-
-
-
-
-
-
-
-
-
 
         // Use Coroutine to allow usage of suspended functions
         GlobalScope.launch {
@@ -50,11 +39,10 @@ class ApiActivity : AppCompatActivity() {
             val array: Array<String> = songs.keys.map { songs[it].toString() }.toTypedArray()
 
             // Create intent and send data over to song player
-            val it = Intent(this@ApiActivity, spotifySong::class.java)
+            val it = Intent(this@apiActivity, songPlayer::class.java)
             it.putExtra("keyTwo", array)
             startActivity(it)
         }
-
     }
 
     private suspend fun identifyTheSongs(url: String?): HashMap<String, songObject> {

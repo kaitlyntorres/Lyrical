@@ -1,5 +1,12 @@
 package com.example.lyrical
 
+/*
+* Authors: Omer Basar, Kaitlyn Torres, Charles Howard
+* File: homeActivity
+* Purpose: allows users to access all of the main functions of the app
+*
+* */
+
 import android.app.Activity
 import android.content.DialogInterface
 import android.content.Intent
@@ -13,25 +20,19 @@ import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 
 
-class guestActivity: AppCompatActivity()    {
-
+class homeActivity: AppCompatActivity()    {
 
     private lateinit var voice: ImageButton
     private lateinit var textv: EditText
     private lateinit var logout: Button
-    private lateinit var search: Button
     private lateinit var  history:Button
     private lateinit var wemail: TextView
 
     private val speechCode = 100
     private lateinit var searchString: String
-
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,8 +50,6 @@ class guestActivity: AppCompatActivity()    {
         voice = findViewById<ImageButton>(R.id.voice)
 
 
-
-
         if (spinner != null) {
             val adapter = ArrayAdapter(
                 this,
@@ -58,9 +57,6 @@ class guestActivity: AppCompatActivity()    {
             )
             spinner.adapter = adapter
         }
-
-
-
 
         val email_name=intent.getStringExtra("Email")
         val email_word= email_name?.substringBefore("@")
@@ -76,8 +72,6 @@ class guestActivity: AppCompatActivity()    {
             voiceToText()
         }
 
-
-
         //when user hits submit on keypad, calls fetch json function
         textv.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_DONE) {
@@ -86,7 +80,7 @@ class guestActivity: AppCompatActivity()    {
                 searchString = sendSpeech
                 //val ahh = ApiActivity.fetchJSON(sendSpeech)
 
-                val it = Intent(this@guestActivity, ApiActivity::class.java)
+                val it = Intent(this@homeActivity, apiActivity::class.java)
                 it.putExtra("keyOne", searchString)
                 startActivity(it)
 
@@ -97,13 +91,9 @@ class guestActivity: AppCompatActivity()    {
         logout.setOnClickListener {
             logout()
         }
-        //search.setOnClickListener {
-        //var sendSpeech = textv.text.toString()
-        // ApiActivity.fetchJSON(sendSpeech)
-        //}
 
         history.setOnClickListener {
-            val it = Intent(this@guestActivity, h::class.java)
+            val it = Intent(this@homeActivity, historyPage::class.java)
             // it.putExtras(b);
             startActivity(it);
             //it.putExtra("arr", "period ");
@@ -151,7 +141,7 @@ class guestActivity: AppCompatActivity()    {
             searchString = sendSpeech
             //val ahh = ApiActivity.fetchJSON(sendSpeech)
 
-            val it = Intent(this@guestActivity, ApiActivity::class.java)
+            val it = Intent(this@homeActivity, apiActivity::class.java)
             it.putExtra("keyOne", searchString)
             startActivity(it)
 

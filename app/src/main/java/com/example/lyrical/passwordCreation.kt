@@ -1,4 +1,12 @@
 package com.example.lyrical
+
+/*
+* Authors: Omer Basar, Kaitlyn Torres, Charles Howard
+* File: passwordCreation
+* Purpose: checks the creation of password in real time
+*
+* */
+
 //methods called when text changes
 import android.text.Editable
 import android.text.TextWatcher
@@ -6,7 +14,7 @@ import androidx.lifecycle.MutableLiveData
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 
-class passwordChecker:TextWatcher {
+class passwordCreation:TextWatcher {
     //var strengthColor: MutableLiveData<Int> = MutableLiveData()
     //var strengthLevel: MutableLiveData<String> = MutableLiveData()
 
@@ -48,10 +56,7 @@ class passwordChecker:TextWatcher {
                 spc.value = 0
             }
 
-
             // LEFT OFF
-
-
 
         }
     }

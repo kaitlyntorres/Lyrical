@@ -23,19 +23,12 @@
             </intent-filter>
         </activity>
         <activity android:name="com.example.lyrical.loginActivity"></activity>
-        <activity android:name="com.example.lyrical.reset"></activity>
+        <activity android:name="com.example.lyrical.passwordReset"></activity>
         <activity android:name="com.example.lyrical.registerActivity"></activity>
-        <activity android:name="com.example.lyrical.guestActivity"></activity>
-        <activity android:name="com.example.lyrical.displaySong"></activity>
-        <activity android:name="com.example.lyrical.spotifySong"></activity>
-        <activity android:name="com.example.lyrical.ApiActivity"></activity>
-        <activity android:name="com.example.lyrical.f"></activity>
-        <activity android:name="com.example.lyrical.h"></activity>
-
-
-
-
-
+        <activity android:name="com.example.lyrical.homeActivity"></activity>
+        <activity android:name="com.example.lyrical.songPlayer"></activity>
+        <activity android:name="com.example.lyrical.apiActivity"></activity>
+        <activity android:name="com.example.lyrical.historyPage"></activity>
 
     </application>
 

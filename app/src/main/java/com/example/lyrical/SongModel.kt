@@ -1,7 +1,13 @@
 package com.example.lyrical
 
+/*
+* Authors: Omer Basar, Kaitlyn Torres, Charles Howard
+* File: SongModel
+* Purpose: parses json data from genius api call
+*
+* */
+
 import com.google.gson.annotations.SerializedName
-import java.io.Serializable
 
 data class SongModel ( @SerializedName("annotation_count") val annotation_count: Int,
                        @SerializedName("api_path") val api_path: String,

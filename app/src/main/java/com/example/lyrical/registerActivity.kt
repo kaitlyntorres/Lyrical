@@ -1,16 +1,21 @@
 package com.example.lyrical
 
+/*
+* Authors: Omer Basar, Kaitlyn Torres, Charles Howard
+* File: registerActivity
+* Purpose: allows users to register an account
+*
+* */
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-//import com.google.android.material.snackbar.Snackbar
 import android.content.Intent
 import android.widget.*
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
-import com.google.firebase.auth.FirebaseAuthInvalidUserException
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
 
@@ -20,7 +25,7 @@ import com.google.firebase.firestore.SetOptions
 
 
 class registerActivity: AppCompatActivity() {
-    // intialize variables
+    // initialize variables
     private lateinit var email: EditText
     private lateinit var passwd: EditText
     private lateinit var confirmpasswd: EditText
@@ -33,8 +38,8 @@ class registerActivity: AppCompatActivity() {
     private lateinit var uctv: TextView
     private lateinit var digittv: TextView
     private lateinit var sctv: TextView
-
     private lateinit var auth: FirebaseAuth
+
     //makes instance of firebase firestore
     val db = FirebaseFirestore.getInstance()
 
@@ -68,7 +73,7 @@ class registerActivity: AppCompatActivity() {
         // on click call function
 
         //calls passwordchecker kotlin file, which checks to see if password meets criteria
-        val passwordTest = passwordChecker()
+        val passwordTest = passwordCreation()
         passwd.addTextChangedListener(passwordTest)
 
         // observes real time change of mutable live data
@@ -102,12 +107,9 @@ class registerActivity: AppCompatActivity() {
             //calls tester function
             tester(lcTrue, ucTrue, digitTrue, scTrue)
 
-
         })
 
-
-
-        // when user cliicks button to register, registerUser function is called
+        // when user clicks button to register, registerUser function is called
         btnRegister.setOnClickListener {
             registerUser()
             //tester(lcTrue,ucTrue,digitTrue,scTrue)
@@ -117,11 +119,7 @@ class registerActivity: AppCompatActivity() {
 
     //if all criteria is met (=1), then button is enabled
     private fun tester(num: Int, num2: Int, num3: Int, num4: Int) {
-
-
-
         btnRegister.isEnabled = num == 1 && num2 == 1 && num3 == 1 && num4 == 1
-
 
     }
 
@@ -129,14 +127,12 @@ class registerActivity: AppCompatActivity() {
     private fun displayStatusofPassword(value: Int, imageView: ImageView, textView: TextView): Int {
         var c = 0
 
-
         if (value == 1) {
             //changes color of image
             imageView.setColorFilter(ContextCompat.getColor(this, R.color.Green))
             //changes color of text
             //textView.setTextColor(ContextCompat.getColor(this, R.color.Green))
             c = 1
-
 
         } else {
             imageView.setColorFilter(ContextCompat.getColor(this, R.color.white))
@@ -146,8 +142,6 @@ class registerActivity: AppCompatActivity() {
         }
 
         return c
-
-
     }
 
     private fun registerUser() {
@@ -191,7 +185,6 @@ class registerActivity: AppCompatActivity() {
         else if(password.length<8 || password.length>20){
             passwd.setError("password not in range")
         }
-        
 
         //if there are no erros, user is created
         auth.createUserWithEmailAndPassword(e, password).addOnCompleteListener(this) {
@@ -207,25 +200,16 @@ class registerActivity: AppCompatActivity() {
                 }
                 // main menu
                 //goes to landing page
-                val intent = Intent(this, guestActivity::class.java)
+                val intent = Intent(this, homeActivity::class.java)
                 intent.putExtra("Email",e)
                 startActivity(intent)
 
             }
             else{
-
-
-
-
-
                 Toast.makeText(this, "Registration Failed", Toast.LENGTH_SHORT).show()
             }
 
-
-
-
         }
-
 
     }
 }
