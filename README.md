@@ -1,9 +1,9 @@
 # lyrical
 
 Members:<br />
-Omer Basar - Backend & Frontend <br />
-Kaitlyn Torres - Database & Frontend<br />
-Charles Howard - Backend & Frontend
+Omer Basar <br />
+Kaitlyn Torres<br />
+Charles Howard
 
 # Objective
 Our goal was to create an app where users could search for a song using voice or text input
